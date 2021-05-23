@@ -1,11 +1,3 @@
-const main = () => {
-  const a = 10;
+import { getMaxArea } from './robot';
 
-  const b = 20;
-
-  const c = a + b;
-
-  console.log('Running some code in here', c);
-};
-
-main();
+console.log('hasMineOld 64', getMaxArea(23, 1000));
