@@ -23,15 +23,15 @@ const moves = [
 ];
 
 export const getMaxArea = (safe: number, axis: number) => {
-  const booleanGraph = array2d(axis * 2);
-  const characterLocationsArray = [];
+  const grid = array2d(axis * 2);
+  const visited = [];
 
-  characterLocationsArray.push({ x: 0, y: 0 });
-  booleanGraph[0 + axis][0 + axis] = true;
+  visited.push({ x: 0, y: 0 });
+  grid[0 + axis][0 + axis] = true;
   let area = 1;
 
-  while (characterLocationsArray.length !== 0) {
-    const lastLocation = characterLocationsArray.pop();
+  while (visited.length !== 0) {
+    const lastLocation = visited.pop();
     moves.forEach((move) => {
       const newX = lastLocation.x + move.x;
       const newY = lastLocation.y + move.y;
@@ -40,10 +40,10 @@ export const getMaxArea = (safe: number, axis: number) => {
       const x = newX + axis;
       const y = newY + axis;
 
-      if (!booleanGraph[x][y] && isSafe) {
-        booleanGraph[x][y] = true;
+      if (!grid[x][y] && isSafe) {
+        grid[x][y] = true;
         area = area + 1;
-        characterLocationsArray.push({ x: newX, y: newY });
+        visited.push({ x: newX, y: newY });
       }
     });
   }
