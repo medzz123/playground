@@ -11,9 +11,11 @@
     "start": "ts-node src/index.ts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "ts": "tsc --noEmit"
+    "ts": "tsc --noEmit",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.37",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -23,7 +25,9 @@
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.2.1"
+    "jest": "^27.0.4",
+    "prettier": "^2.2.1",
+    "ts-jest": "^27.0.3"
   },
   "dependencies": {
     "axios": "^0.21.1",

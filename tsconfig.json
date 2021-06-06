@@ -18,7 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "jsx": "preserve",
-    "typeRoots": ["node_modules/@types"]
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["src/lib/*"],
+      "@typings/*": ["src/typings/*"],
+      "@test/*": ["__tests__/*"]
+    }
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules"]
